@@ -1,7 +1,22 @@
 import React from "react";
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-import { Camera } from "expo";
+import { ActivityIndicator, Dimensions } from "react-native";
+import { Camera } from "expo-camera";
 import * as Permissions from "expo-permissions";
+import styled from "styled-components";
+
+const { width, height } = Dimensions.get("window");
+
+const CenterView = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: cornflowerblue;
+`;
+
+const Text = styled.Text`
+  color: white;
+  font-size: 22px;
+`;
 
 export default class App extends React.Component {
   state = {
@@ -19,18 +34,30 @@ export default class App extends React.Component {
     const { hasPermission } = this.state;
     if (hasPermission === true) {
       return (
-        <View>
-          <Text>Has permissions</Text>
-        </View>
+        <CenterView>
+          <Camera
+            style={{
+              width: width - 40,
+              height: height / 1.5,
+              borderRadius: 10,
+              overflow: "hidden"
+            }}
+            type={Camera.Constants.Type.front}
+          />
+        </CenterView>
       );
     } else if (hasPermission === false) {
       return (
-        <View>
+        <CenterView>
           <Text>Don't have permission for this</Text>
-        </View>
+        </CenterView>
       );
     } else {
-      return <ActivityIndicator />;
+      return (
+        <CenterView>
+          <ActivityIndicator />
+        </CenterView>
+      );
     }
   }
 }
