@@ -2012,6 +2012,11 @@ expo-constants@~6.0.0:
   dependencies:
     ua-parser-js "^0.7.19"
 
+expo-face-detector@~6.0.0:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/expo-face-detector/-/expo-face-detector-6.0.1.tgz#7ce29a697fedbe3e09534601322c4053ed33ad3e"
+  integrity sha512-R1lGjSKwprY7NJpbMWON4NpQXbPpkoSjMIv1gynsmji8QViEJqOGZWQHh/ZTRs29PDvKtYBOStBlAP3AsXeVHQ==
+
 expo-file-system@~6.0.0:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/expo-file-system/-/expo-file-system-6.0.2.tgz#e65f30eb6a7213e07933df9688116eaf4e25bbf8"
